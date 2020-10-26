@@ -41,12 +41,16 @@ functionbeat.provider.aws.functions:
     #dead_letter_config.target_arn:
 
     # Execution role of the function.
-    #role: arn:aws:iam::123456789012:role/MyFunction
+    role: <role_arn>
 
     # Connect to private resources in an Amazon VPC.
-    #virtual_private_cloud:
-    #  security_group_ids: []
-    #  subnet_ids: []
+    virtual_private_cloud:
+      security_group_ids: 
+        - <custom_security_group_id>
+      subnet_ids:
+        - <custom_subnet_id_1>
+        - <custom_subnet_id_2>
+    
 
     # Optional fields that you can specify to add additional information to the
     # output. Fields can be scalar values, arrays, dictionaries, or any nested
